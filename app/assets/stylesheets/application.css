@@ -13,3 +13,52 @@
  *= require_tree .
  *= require_self
  */
+
+html, body, .form_box {
+  height: 100%;
+  width: 100%;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.map_continer {
+  width: 100%;
+}
+#map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.mapbox-ctrl-geocoder {
+  min-width: 100%;
+}
+
+#map {
+  margin-top: 50vh;
+}
+
+input {
+}
+
+.form_container {
+  display: flex;
+  justify-content: center;
+  height: 46vh;}
+
+
+.form_warper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}

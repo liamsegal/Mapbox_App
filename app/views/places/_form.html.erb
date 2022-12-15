@@ -1,32 +1,48 @@
-<%= form_with(model: place) do |form| %>
-  <% if place.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(place.errors.count, "error") %> prohibited this place from being saved:</h2>
+<div class="form_box" data-controller="map">
+  <div class="form_container">
+    <div class="form_warper">
+        <%= form_with(model: place) do |form| %>
+          <h1>New place</h1>
+          <% if place.errors.any? %>
+            <div style="color: red">
+              <h2><%= pluralize(place.errors.count, "error") %> prohibited this place from being saved:</h2>
 
-      <ul>
-        <% place.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+              <ul>
+                <% place.errors.each do |error| %>
+                  <li><%= error.full_message %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
 
-  <div>
-    <%= form.label :latitude, style: "display: block" %>
-    <%= form.text_field :latitude %>
-  </div>
 
-  <div>
-    <%= form.label :longitude, style: "display: block" %>
-    <%= form.text_field :longitude %>
-  </div>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
-  </div>
 
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
+          <div id="geocoder" class="geocoder"></div>
+
+          <div>
+            <%= form.label :latitude, style: "display: block", placeholder: "latitude" %>
+            <%= form.text_field :latitude %>
+          </div>
+
+          <div>
+            <%= form.label :longitude, style: "display: block" %>
+            <%= form.text_field :longitude %>
+          </div>
+
+          <div>
+            <%= form.label :name, style: "display: block" %>
+            <%= form.text_field :name %>
+          </div>
+
+          <div>
+            <%= form.submit %>
+          </div>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="map_comtainer">
+        <div id="map"></div>
+      </div>
+</div>
